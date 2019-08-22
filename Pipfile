@@ -12,6 +12,7 @@ djangorestframework-simplejwt = "*"
 python-dotenv = "*"
 psycopg2-binary = "*"
 djangorestframework = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.7"
