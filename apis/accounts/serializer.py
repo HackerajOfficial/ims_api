@@ -16,7 +16,7 @@ class ProfileSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     def __init__(self, *args, **kwargs):
         self.REQUIRED_FIELD="username","email"
-        self.ERRORS
+        self.ERRORS =[]
         super().__init__(*args, **kwargs)
 
     profile = ProfileSerializer()
