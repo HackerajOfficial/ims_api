@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     #custom apps
     'apis.accounts',
     'apis.customer',
+    'apis.supplier',
 
     #third party
     'rest_framework',
