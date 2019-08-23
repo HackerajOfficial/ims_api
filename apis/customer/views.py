@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework.generics import CreateAPIView, UpdateAPIView, ListAPIView
+from rest_framework.generics import CreateAPIView, UpdateAPIView, ListAPIView, DestroyAPIView
 from apis.customer.serializer import CustomerSerializer
 from common.permissions import IsAdminOrStaff
 from apis.customer.models import Customer
@@ -18,9 +18,17 @@ class UpdateCustomerAPIView(UpdateAPIView):
     queryset = Customer.objects.all()
     permission_classes = [IsAdminOrStaff]
 
+
 class ListCustomerAPIView(ListAPIView):
     authentication_classes = [authentication.JWTAuthentication]
     serializer_class = CustomerSerializer
     queryset = Customer.objects.all()
     permission_classes = [IsAdminOrStaff]
     pagination_class = CustomerAndSupplierPaginator
+
+
+class DeleteCustomerAPIView(DestroyAPIView):
+    authentication_classes = [authentication.JWTAuthentication]
+    serializer_class = CustomerSerializer
+    queryset = Customer.objects.all()
+    permission_classes = [IsAdminOrStaff]
