@@ -29,4 +29,5 @@ urlpatterns = [
     path('customer/', include('apis.customer.urls')),
     path('supplier/', include('apis.supplier.urls')),
     path('category/', include('apis.category.urls')),
+    path('purchase/', include('apis.purchase.urls')),
 ]
