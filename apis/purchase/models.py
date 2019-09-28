@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from apis.supplier.models import Supplier
+from apis.product.models import Product
 
 class StockDetails(models.Model):
     product_name        =   models.TextField(verbose_name="product_name")
@@ -22,11 +23,10 @@ class Purchase(models.Model):
     MODES = (("0","CASH"),("1","CHEQUE"),("2","OTHER"))
     purchase_date = models.DateTimeField(auto_now_add=True)
     bill_no = models.TextField(verbose_name='billnumber', max_length=30)
-    product_name = models.TextField(verbose_name='product_name', max_length=20)
+    product_name = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField(verbose_name='quantity')
     cost_price = models.IntegerField(verbose_name='cost_price')
     selling_price = models.IntegerField(verbose_name='selling_price')
-    stock = models.IntegerField(verbose_name='stock')
     total = models.FloatField(verbose_name='total')
     payment = models.IntegerField()
     description = models.TextField()

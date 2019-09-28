@@ -5,6 +5,7 @@ from rest_framework_simplejwt import authentication
 from common.permissions import IsAdminOrStaff
 from apis.purchase.models import StockDetails, Purchase
 from common.pagination import CustomerAndSupplierPaginator
+from rest_framework.views import APIView
 
 
 class AddStockDetailsAPIView(CreateAPIView):

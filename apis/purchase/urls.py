@@ -11,6 +11,5 @@ urlpatterns = [
     path('edit/<int:pk>/', views.UpdatePurchaseAPIView.as_view()),
     path('', views.ListPuchaseAPIView.as_view()),
     path('delete/<int:pk>/', views.DeletePuchaseAPIView.as_view()),
-    
-    
+
 ]

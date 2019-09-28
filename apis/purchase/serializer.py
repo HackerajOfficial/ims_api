@@ -7,7 +7,7 @@ class StockSerializer(serializers.ModelSerializer):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         context = kwargs.get('context')
-
+        print(context)
         if context:
             self.request = context.get('request')
 
@@ -28,7 +28,7 @@ class PurchaseSerializer(serializers.ModelSerializer):
         super().__init__(*args, **kwargs)
         context = kwargs.get('context')
         if context:
-            self.request = context.get('context')
+            self.request = context.get('request')
 
 
     class Meta:

@@ -1,8 +1,8 @@
 from rest_framework import serializers
 from rest_framework.serializers import ModelSerializer
-from apis.category.models import Category
+from apis.product.models import Product
 
-class CategorySerializer(serializers.ModelSerializer):
+class ProductSerializer(serializers.ModelSerializer):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         context = kwargs.get('context')
@@ -10,5 +10,5 @@ class CategorySerializer(serializers.ModelSerializer):
             self.request = context.get('request')
 
     class Meta:
-        model = Category
+        model = Product
         fields = ['pk','product_name','category_name']
