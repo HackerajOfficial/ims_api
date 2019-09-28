@@ -28,7 +28,7 @@ class PurchaseSerializer(serializers.ModelSerializer):
         super().__init__(*args, **kwargs)
         context = kwargs.get('context')
         if context:
-            self.request = context.get('context')
+            self.request = context.get('request')
 
 
     class Meta:
